@@ -2,9 +2,10 @@
   "name": "fxa-oauth-client",
   "version": "0.1.0",
   "description": "FxA OAuth CLI",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "./lib/index.js",
+  "scripts": {},
+  "bin": {
+    "fxa-oauth": "./bin/fxa-oauth.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/mozilla/fxa-oauth-client/issues"
   },
-  "homepage": "https://github.com/mozilla/fxa-oauth-client"
+  "homepage": "https://github.com/mozilla/fxa-oauth-client",
+  "dependencies": {
+    "bluebird": "~2.3.10",
+    "browserid-crypto": "^0.7.0",
+    "commander": "^2.5.0",
+    "fxa-js-client": "^0.1.24",
+    "npmlog": "^0.1.1",
+    "request": "^2.47.0",
+    "xhr2": "^0.1.0",
+    "read": "^1.0.5"
+  }
 }
