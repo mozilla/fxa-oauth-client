@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/mozilla/fxa-oauth-client",
   "dependencies": {
-    "bluebird": "~2.3.10",
+    "bluebird": "^2.8.1",
     "browserid-crypto": "^0.7.0",
     "commander": "^2.5.0",
     "fxa-js-client": "^0.1.24",
-    "npmlog": "^0.1.1",
+    "npmlog": "^1.0.0",
     "request": "^2.47.0",
     "xhr2": "^0.1.0",
     "read": "^1.0.5"
