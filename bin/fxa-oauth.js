@@ -136,13 +136,13 @@ function withTempToken(cb) {
         if (error._tempToken) {
           log.verbose('token', 'temp token found, deleting');
           return client.destroyToken(error._tempToken)
-            .done(function() {
+            .then(function() {
               log.verbose('token', 'deleted temporary token');
               delete error._tempToken;
-            }, error.onError);
+            });
         }
       });
-  }), cb);
+  }), cb).done(null, onError);
 }
 
 program
@@ -165,9 +165,9 @@ program
     withTempToken(function(client) {
       /*jshint camelcase:false*/
       return client.listClients()
-        .done(function(clients) {
+        .then(function(clients) {
           p(JSON.stringify(clients.clients, null, 2));
-        }, onError);
+        });
     });
   });
 
@@ -239,9 +239,9 @@ program
       var client = { id: id };
       client[prop] = value;
       return oauth.updateClient(client)
-        .done(function() {
+        .then(function() {
           log.info('update', 'Client %s updated %s="%s".', id, prop, value);
-        }, onError);
+        });
     });
   });
 
@@ -270,13 +270,13 @@ program
             return P.resolve(false);
           }
         })
-        .done(function(wasDeleted) {
+        .then(function(wasDeleted) {
           if (wasDeleted) {
             p('Client %s deleted.', id);
           } else {
             p('Aborted.');
           }
-        }, onError);
+        });
     });
   });
 
