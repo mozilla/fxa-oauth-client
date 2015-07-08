@@ -178,7 +178,7 @@ function promptClient() {
     name: {},
     redirect_uri: {},
     image_uri: {},
-    whitelisted: {
+    trusted: {
       default: 'true'
     },
     can_grant: {
